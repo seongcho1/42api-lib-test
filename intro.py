@@ -91,12 +91,14 @@ if __name__ == "__main__":
 
 
 
-    response = ic.get("certificates_users", params=payload)
+    response = ic.get("users/seongcho/locations_stats", params=payload)
+    response = ic.get("users/seongcho", params=payload)
+
     if response.status_code == 200: # Is the status OK?
         data = response.json()
 
-    for i, user in enumerate(data):
-        print(f'\ni={i}, user={user}')
+    for i, key in enumerate(data):
+        print(f'\ni={i}, {key}:{data[key]}')
 
 
     exit()
