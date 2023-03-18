@@ -3,3 +3,4 @@
 
 campus_id = 29 #seoul
 cursus_id = 1
+my_user_id = "seongcho"

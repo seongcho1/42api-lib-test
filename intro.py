@@ -1,5 +1,5 @@
 from intra import IntraAPIClient
-from config import campus_id
+from config import campus_id, my_user_id
 
 # from intra import ic
 import pandas as pd
@@ -91,8 +91,8 @@ if __name__ == "__main__":
 
 
 
-    response = ic.get("users/seongcho/locations_stats", params=payload)
-    response = ic.get("users/seongcho", params=payload)
+    #response = ic.get("users/seongcho/locations_stats", params=payload)
+    response = ic.get(f"users/{my_user_id}", params=payload)
 
     if response.status_code == 200: # Is the status OK?
         data = response.json()
